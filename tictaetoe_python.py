@@ -1,10 +1,17 @@
-def grid_print(val):
-    print("| {} | {} | {} |".format(val[0], val[1], val[2]))
-    print("----------------")
-    print("| {} | {} | {} |".format(val[3], val[4], val[5]))
-    print("----------------")
-    print("| {} | {} | {} |".format(val[6], val[7], val[8]))
+#def grid_print(val):
+#    print("| {} | {} | {} |".format(val[0], val[1], val[2]))
+#    print("----------------")
+#    print("| {} | {} | {} |".format(val[3], val[4], val[5]))
+#    print("----------------")
+#    print("| {} | {} | {} |".format(val[6], val[7], val[8]))
 
+def grid_print_new(val):
+    print(f"| {val[0]} | {val[1]} | {val[2]} |")
+    print("----------------")
+    print(f"| {val[3]} | {val[4]} | {val[5]} |")
+    print("----------------")
+    print(f"| {val[6]} | {val[7]} | {val[8]} |")
+    
 
 def game_over(player, positions):
     wins = [[0, 1, 2], [3, 4, 5], [6, 7, 8],  # Rows
@@ -42,7 +49,7 @@ def gameplay():
         choice = choice_test(val, player)
         val[choice - 1] = player
         positions[player].append(choice - 1)
-        grid_print(val)
+        grid_print_new(val)
         if game_over(player, positions):
             print(player, " won!")
             break
